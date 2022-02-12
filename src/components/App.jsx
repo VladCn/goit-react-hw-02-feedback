@@ -15,7 +15,7 @@ export class App extends React.Component {
     return this.state.good + this.state.neutral + this.state.bad;
   };
   getPositiveFeedback = () => {
-    return ((this.state.good / this.getTotal()) * 100).toFixed(2);
+    return ((this.state.good / this.getTotal()) * 100).toFixed(0);
   };
   handleLeaveFeedback = ({ target }) => {
     this.setState(prev => ({
@@ -29,11 +29,13 @@ export class App extends React.Component {
         style={{
           height: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center',
+          // alignItems: 'center',
           fontSize: 40,
           textTransform: 'uppercase',
           color: '#010101',
+          marginLeft: '50px',
         }}
       >
         {/*React homework template*/}
